@@ -1,8 +1,27 @@
-﻿/*
-Console.WriteLine("Введите трехзначное число:");
-string input = Console.ReadLine();
-Console.WriteLine("{0}->{1}",input, input[1]);
-*/
+﻿int number = ReadInt("Введите трехзначное число: ");
+int amount = number.ToString().Length;
+
+if (amount < 3 || amount > 3)
+{
+    Console.WriteLine("Это не трехзначное число");
+}
+else
+{
+    Console.WriteLine(InCenter(number));
+}
+
+int ReadInt(string message)
+{
+    Console.Write(message);
+    return Convert.ToInt32(Console.ReadLine());
+}
+
+int InCenter(int a)
+{
+    
+    int result = ((a / 10) % 10);
+    return result;
+}
 
 /*
 int ThirdDigit(int number)
@@ -28,6 +47,7 @@ else
 Console.WriteLine($"Третья цифра: {ThirdDigit(number1)}");
 */
 
+/*
 int dayNumber = ReadInt("Введите номер дня от 1 до 7: ");
 Console.WriteLine(WorkHoliday(dayNumber));
 
@@ -56,3 +76,5 @@ string WorkHoliday(int a)
     }
     return " день.";
 }
+*/
+
